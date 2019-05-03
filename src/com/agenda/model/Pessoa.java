@@ -6,6 +6,7 @@ public class Pessoa {
 	private String telefone;
 	private String email;
 	private String endereco;
+
 	
 	public String getNome() {
 		return nome;
@@ -31,6 +32,8 @@ public class Pessoa {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	
+	
 	
 	
 	

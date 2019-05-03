@@ -27,7 +27,7 @@
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="busca-contatos">Lista
 						de Clientes</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Bot�o 4</a></li>
+			
 			</ul>
 		</div>
 	</nav>
@@ -40,8 +40,9 @@
 			<tr>
 				<th>Nome</th>
 				<th>E-mail</th>
-				<th>Endere�o</th>
+				<th>Endereço</th>
 				<th>Telefone</th>
+				<th>Opcoes</th>
 			</tr>
 			<c:forEach var="pessoa" items="${contatos}">
 			<tr>
@@ -49,9 +50,14 @@
 				<td>${pessoa.email}</td>
 				<td>${pessoa.endereco}</td>
 				<td>${pessoa.telefone}</td>
+				<td> <a href="remover-contato" class="btn btn-danger"> Delete </a></td>
+				
 			</tr>
 			</c:forEach>
 		</table>
+		
+			<a href="index.html" class="btn btn-success"  type="submit">Home </a>
+			
 	</div>
 </body>
 
