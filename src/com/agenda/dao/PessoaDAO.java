@@ -4,6 +4,9 @@ package com.agenda.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.RuntimeErrorException;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import com.agenda.model.Pessoa;
@@ -53,7 +56,7 @@ public class PessoaDAO {
 				
 				while(rs.next()) {
 					Pessoa pessoa = new Pessoa();
-					
+					pessoa.setId(rs.getLong("id"));
 					pessoa.setNome(rs.getString("nome"));
 					pessoa.setEmail(rs.getString("email"));
 					pessoa.setEndereco(rs.getString("endereco"));
@@ -75,8 +78,21 @@ public class PessoaDAO {
 		}
 		
 		public void removerContato(Pessoa pessoa) {
-			System.out.println("Removido com sucesso novamente :)");
+			String SQL = "delete from pessoa where id=?";
 			
+			try {
+				
+				this.connection = new ConnectionFactory().getConnection();
+				PreparedStatement stmt = this.connection.prepareStatement(SQL);
+				stmt.setLong(1, pessoa.getId());
+				stmt.execute();
+				stmt.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+				
+			
+					
+			}	
 			
 		}
 		

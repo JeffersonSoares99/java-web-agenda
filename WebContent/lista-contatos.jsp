@@ -38,6 +38,7 @@
 	<div class="container">
 		<table class="table">
 			<tr>
+			<th>ID</th>
 				<th>Nome</th>
 				<th>E-mail</th>
 				<th>Endereço</th>
@@ -46,6 +47,7 @@
 			</tr>
 			<c:forEach var="pessoa" items="${contatos}">
 			<tr>
+				<td>${pessoa.id}</td>
 				<td>${pessoa.nome}</td>
 				<td>${pessoa.email}</td>
 				<td>${pessoa.endereco}</td>
