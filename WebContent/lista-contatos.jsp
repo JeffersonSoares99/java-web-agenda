@@ -52,7 +52,7 @@
 				<td>${pessoa.email}</td>
 				<td>${pessoa.endereco}</td>
 				<td>${pessoa.telefone}</td>
-				<td> <a href="remover-contato" class="btn btn-danger"> Delete </a></td>
+				<td> <a href="remover-contato?id=${pessoa.id}" class="btn btn-danger"> Delete </a></td>
 				
 			</tr>
 			</c:forEach>

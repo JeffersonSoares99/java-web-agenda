@@ -18,6 +18,8 @@ public class CadastraUsuarioServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Pessoa pessoa = new Pessoa();
 		
+		request.setCharacterEncoding("UTF-8");
+		
 		pessoa.setNome(request.getParameter("name"));
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEmail(request.getParameter("email"));

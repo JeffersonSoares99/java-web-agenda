@@ -32,6 +32,7 @@ public class Remover extends HttpServlet{
 	
 service.removeContato(pessoa);
 	
+resp.sendRedirect("busca-contatos");
 	
 	
 	}		
