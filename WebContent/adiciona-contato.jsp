@@ -30,6 +30,8 @@
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link" href="adiciona-contato.jsp">Cadastre-se
 						<span class="sr-only">(current)</span>
+						
+						<li class="nav-item"><a class="nav-link" href="busca-contatos">Lista de Clientes</a></li>
 				</a></li>
 			
 			
@@ -45,7 +47,7 @@
 				<form action="cadastra-usuario" id="form-produto">
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<label for="nome">Nome</label> <input type="text"
+							<label for="nome">Nome</label> <input type="text" value="${param.nome}"
 								class="form-control" id="name" name="name" placeholder="Nome"
 								required="on">
 						</div>
@@ -53,21 +55,21 @@
 
 					<div class="form-row">
 						<div class="form-group col-md-3">
-							<label for="tel">Telefone</label> <input type="text"
+							<label for="tel">Telefone</label> <input type="text" value="${param.telefone}"
 								class="form-control" id="tel" name="telefone"
 								placeholder="Telefone" data-mask="(99)9999-9999">
 						</div>
 
 						<div class="form-group col-md-3">
-							<label for="email">E-mail</label> <input type="email"
+							<label for="email">E-mail</label> <input type="email" value="${param.email}"
 								class="form-control" id="email" name="email"
 								placeholder="E-mail">
 						</div>
 
 						<div class="form-group col-md-6">
-							<label for="end">EndereÃ§o</label> <input type="text"
+							<label for="end">Endereço</label> <input type="text" value="${param.endereco}"
 								class="form-control" id="end" name="endereco"
-								placeholder="EndereÃ§o">
+								placeholder="Endereço">
 						</div>
 
 						<div class="form-group col-md-6">

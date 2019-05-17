@@ -18,9 +18,9 @@ public class CadastraUsuarioServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Pessoa pessoa = new Pessoa();
 		
-		request.setCharacterEncoding("UTF-8");
+request.setCharacterEncoding("UTF-8");
 		
-		pessoa.setNome(request.getParameter("name"));
+		pessoa.setNome(request.getParameter("nome"));
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEmail(request.getParameter("email"));
 		pessoa.setEndereco(request.getParameter("endereco"));
@@ -32,7 +32,25 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		
 		response.sendRedirect("busca-contatos");
 		
+		if(null != request.getParameter("id")&&
+				!request.getParameter("id").equals("") ) 
+		{
+			service.alterar(pessoa);
+				pessoa.setId(Long.parseLong(request.getParameter("id")));
+		}
+		else
+		{
+			service.cadastra(pessoa);
+		}
+	
+			
+		
+		
+		
 		
 	}	
+	
+	
+	
 
 }

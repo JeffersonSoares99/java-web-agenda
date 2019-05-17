@@ -23,7 +23,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="adiciona-contato.html">Cadastre-se <span class="sr-only">(current)</span>
+					href="adiciona-contato.jsp">Cadastre-se <span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="busca-contatos">Lista
 						de Clientes</a></li>
@@ -52,8 +52,13 @@
 				<td>${pessoa.email}</td>
 				<td>${pessoa.endereco}</td>
 				<td>${pessoa.telefone}</td>
-				<td> <a href="remover-contato?id=${pessoa.id}" class="btn btn-danger"> Delete </a></td>
-				
+				<td> <a href="remover-contato?id=${pessoa.id}" class="btn btn-danger"> Delete </a> 
+				<a href="adiciona-contato.jsp?id=${pessoa.id}${pessoa.id}
+				&nome=${pessoa.nome}
+				&email=${pessoa.email}
+				&endereco=${pessoa.endereco}
+				&telefone=${pessoa.telefone}" class="btn btn-warning"> Editar </a></td>
+			
 			</tr>
 			</c:forEach>
 		</table>

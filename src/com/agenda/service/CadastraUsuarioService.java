@@ -12,6 +12,7 @@ public class CadastraUsuarioService {
 		canal.cadastro(pessoa);
 	}
 
+
 	public List<Pessoa> buscarPessoas() {
 		PessoaDAO dao = new PessoaDAO();
 		return dao.buscaPessoas();
@@ -22,5 +23,11 @@ public class CadastraUsuarioService {
 		dao.removerContato(pessoa);
 		
 	}
+	public void alterar (Pessoa pessoa) {
+		PessoaDAO dao = new PessoaDAO();
+		dao.alterar(pessoa);
+		
+	}
+
 
 }
