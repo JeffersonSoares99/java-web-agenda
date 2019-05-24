@@ -34,8 +34,6 @@
 						<li class="nav-item"><a class="nav-link" href="busca-contatos">Lista de Clientes</a></li>
 				</a></li>
 			
-			
-			
 			</ul>
 		</div>
 	</nav>
@@ -45,14 +43,17 @@
 		<div class="card">
 			<div class="card-body">
 				<form action="cadastra-usuario" id="form-produto">
+				
+				<input type="hidden" id="id" name="id" value="${param.id }">
+				
 					<div class="form-row">
 						<div class="form-group col-md-12">
 							<label for="nome">Nome</label> <input type="text" value="${param.nome}"
-								class="form-control" id="name" name="name" placeholder="Nome"
+								class="form-control" id="nome" name="nome" placeholder="Nome"
 								required="on">
 						</div>
 					</div>
-
+					
 					<div class="form-row">
 						<div class="form-group col-md-3">
 							<label for="tel">Telefone</label> <input type="text" value="${param.telefone}"
@@ -75,7 +76,7 @@
 						<div class="form-group col-md-6">
 							<button  class="btn btn-success" id="btnSalvar" type="submit">Salvar</button>
 						</div>
-
+						
 					</div>
 			</div>
 

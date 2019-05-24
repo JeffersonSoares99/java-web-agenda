@@ -98,11 +98,11 @@ public class PessoaDAO {
 		
 		public void alterar (Pessoa pessoa){
 			
-			String SQL = "update pessoas set"
+			String SQL = "update pessoa set "
 					+ "nome=?, "
 					+ "email=?, "
 					+ "endereco=?, "
-					+ "telefone=?, "
+					+ "telefone=? "
 					+ " where id=?";
 			
 			
@@ -110,6 +110,7 @@ try {
 				
 				this.connection = new ConnectionFactory().getConnection();
 				PreparedStatement stmt = this.connection.prepareStatement(SQL);
+				
 				stmt.setString(1, pessoa.getNome());
 				stmt.setString(2, pessoa.getEmail());
 				stmt.setString(3, pessoa.getEndereco());
