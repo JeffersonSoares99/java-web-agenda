@@ -5,28 +5,33 @@ import java.util.List;
 import com.agenda.dao.PessoaDAO;
 import com.agenda.model.Pessoa;
 
-public class CadastraUsuarioService {
+public class CadastraUsuarioService 
+{
+ private PessoaDAO dao = new PessoaDAO();
+ 
 
-	public void cadastra(Pessoa pessoa) {
-		PessoaDAO canal = new PessoaDAO();
-		canal.cadastro(pessoa);
-	}
 
 
 	public List<Pessoa> buscarPessoas() {
-		PessoaDAO dao = new PessoaDAO();
-		return dao.buscaPessoas();
+		return this.dao.buscaPessoas();
 	}
 	
 	public void removeContato (Pessoa pessoa) {	
-		PessoaDAO dao = new PessoaDAO();
-		dao.removerContato(pessoa);
+		this.dao.removerContato(pessoa);
 		
 	}
-	public void alterar (Pessoa pessoa) {
-		PessoaDAO dao = new PessoaDAO();
-		dao.alterar(pessoa);
-		
+
+	public void cadastrarOuAlterar(Pessoa pessoa)
+	{
+		if(0 != pessoa.getId()) { 
+		 
+				this.dao.alterar(pessoa);
+		}
+		else
+		{
+			this.dao.cadastro(pessoa);
+			
+		}
 	}
 
 

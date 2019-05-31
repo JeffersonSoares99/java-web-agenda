@@ -16,6 +16,10 @@ import com.mysql.jdbc.Connection;
 public class PessoaDAO {
 	
 	private Connection connection;
+	private PreparedStatement stmt;
+	
+	public PessoaDAO() {
+	}
 	
 	public void cadastro(Pessoa pessoa) {
 		

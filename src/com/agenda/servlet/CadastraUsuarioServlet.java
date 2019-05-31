@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
 
 import com.agenda.model.Pessoa;
 import com.agenda.service.CadastraUsuarioService;
@@ -30,20 +31,20 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		
 		
 		
-		response.sendRedirect("busca-contatos");
+	
 		
 		if(null != request.getParameter("id")&&
 				!request.getParameter("id").equals("") ) 
 		{
 				pessoa.setId(Long.parseLong(request.getParameter("id")));
-				service.alterar(pessoa);
-		}
-		else
-		{
-			service.cadastra(pessoa);
-		}
-	
 			
+		}
+		
+			
+		service.cadastrarOuAlterar(pessoa);
+		
+	
+		response.sendRedirect("lista-contatos");
 		
 		
 		
